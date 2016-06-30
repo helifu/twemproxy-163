@@ -77,20 +77,21 @@ Twemproxy can be configured through a YAML file specified by the -c or --conf-fi
 + **sentinels**: A list of redis-sentinel address, port and name (ip:port or ip:port name) for this server pool.
 
 For example
-        alpha:
-          listen: 0.0.0.0:6379
-          hash: murmur
-          hash_tag: "{}"
-          distribution: ketama
-          timeout: 400
-          redis_auth: 123456
-          groups:
-           - groups_helf_0
-           - groups_helf_1
-           - groups_helf_2
-           - groups_helf_3
-          sentinel_heartbeat: 2000
-          sentinels:
-           - 10.164.97.188:26379 sentinel0
-           - 10.164.97.189:26379 sentinel1
-           - 10.164.97.190:26379 sentinel2
+
+    alpha:
+      listen: 0.0.0.0:6379
+      hash: murmur
+      hash_tag: "{}"
+      distribution: ketama
+      timeout: 400
+      redis_auth: 123456
+      groups:
+       - groups_helf_0
+       - groups_helf_1
+       - groups_helf_2
+       - groups_helf_3
+      sentinel_heartbeat: 2000
+      sentinels:
+       - 10.164.97.188:26379 sentinel0
+       - 10.164.97.189:26379 sentinel1
+       - 10.164.97.190:26379 sentinel2
