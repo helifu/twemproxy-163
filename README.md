@@ -76,7 +76,7 @@ Twemproxy can be configured through a YAML file specified by the -c or --conf-fi
 + **sentinel_heartbeat**: The number of consecutive failures on a server that would lead to it being temporarily ejected when auto_eject_host is set to true. Defaults to 2.
 + **sentinels**: A list of redis-sentinel address, port and name (ip:port or ip:port name) for this server pool.
 
-    For example: 
+For example
         alpha:
           listen: 0.0.0.0:6379
           hash: murmur
