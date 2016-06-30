@@ -73,7 +73,7 @@ Twemproxy can be configured through a YAML file specified by the -c or --conf-fi
 + **redis_db**: The DB number to use on the pool servers. Defaults to 0. Note: Twemproxy will always present itself to clients as DB 0.
 + **server_connections**: The maximum number of connections that can be opened to each server. By default, we open at most 1 server connection.
 + **groups**: A list of server groups, that are used for partition. At the same time, they are monitored in redis-sentinels.
-+ **sentinel_heartbeat**: The number of consecutive failures on a server that would lead to it being temporarily ejected when auto_eject_host is set to true. Defaults to 2.
++ **sentinel_heartbeat**: The beat interval for redis-sentinel. Defaults to 1.
 + **sentinels**: A list of redis-sentinel address, port and name (ip:port or ip:port name) for this server pool.
 
 For example
