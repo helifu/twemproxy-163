@@ -1,12 +1,12 @@
 # twemproxy (nutcracker) [![Build Status](https://secure.travis-ci.org/twitter/twemproxy.png)](http://travis-ci.org/twitter/twemproxy)
 
 **twemproxy** (pronounced "two-em-proxy"), aka **nutcracker** is a fast and lightweight proxy for [memcached](http://www.memcached.org/) and [redis](http://redis.io/) protocol. It was built primarily to reduce the number of connections to the caching servers on the backend. This, together with protocol pipelining and sharding enables you to horizontally scale your distributed caching architecture.
-----------------------------------------------------------------------------------------------------------------------
+
 
 ## NEW FEATURE
 
     We modified the twemproxy to supports redis-server failover by communicating with redis-sentinel^_^
-
+![image](http://nos.netease.com/knowledge/9e4c3186-3994-41e8-bf9e-924ff56d4ac9)
 ## Build
 
 To build twemproxy from source with _debug logs enabled_ and _assertions enabled_:
@@ -76,45 +76,21 @@ Twemproxy can be configured through a YAML file specified by the -c or --conf-fi
 + **sentinel_heartbeat**: The number of consecutive failures on a server that would lead to it being temporarily ejected when auto_eject_host is set to true. Defaults to 2.
 + **sentinels**: A list of redis-sentinel address, port and name (ip:port or ip:port name) for this server pool.
 
-
-For example, the configuration file in [conf/nutcracker.yml](conf/nutcracker.yml), also shown below
-    alpha:
-      listen: 0.0.0.0:6379
-      hash: murmur
-      hash_tag: "{}"
-      distribution: ketama
-      timeout: 400
-      redis_auth: 123456
-      groups:
-       - groups_helf_0
-       - groups_helf_1
-       - groups_helf_2
-       - groups_helf_3
-      sentinel_heartbeat: 2000
-      sentinels:
-       - 10.164.97.188:26379 sentinel0
-       - 10.164.97.189:26379 sentinel1
-       - 10.164.97.190:26379 sentinel2
-
-    beta:
-      listen: 0.0.0.0:22121
-      hash: fnv1a_64
-      hash_tag: "{}"
-      distribution: ketama
-      timeout: 400
-      redis_auth: abcdef
-      groups:
-       - group1
-       - group2
-       - group3
-       - group4
-       - group5
-       - group6
-       - group7
-       - group8
-      sentinel_heartbeat: 1000
-      sentinels:
-       - 10.164.97.188:26379 sentinel0
-       - 10.164.97.189:26379 sentinel1
-       - 10.164.97.190:26379 sentinel2
-
+    For example: 
+        alpha:
+          listen: 0.0.0.0:6379
+          hash: murmur
+          hash_tag: "{}"
+          distribution: ketama
+          timeout: 400
+          redis_auth: 123456
+          groups:
+           - groups_helf_0
+           - groups_helf_1
+           - groups_helf_2
+           - groups_helf_3
+          sentinel_heartbeat: 2000
+          sentinels:
+           - 10.164.97.188:26379 sentinel0
+           - 10.164.97.189:26379 sentinel1
+           - 10.164.97.190:26379 sentinel2
