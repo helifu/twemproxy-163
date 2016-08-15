@@ -6,7 +6,7 @@
 ## NEW FEATURE
 
     We modified the twemproxy to supports redis-server failover by communicating with redis-sentinel^_^
-![image](http://nos.netease.com/knowledge/9e4c3186-3994-41e8-bf9e-924ff56d4ac9)
+![image](https://raw.githubusercontent.com/helifu/twemproxy-163/master/twemproxy-163.png)
 ## Build
 
 To build twemproxy from source with _debug logs enabled_ and _assertions enabled_:
