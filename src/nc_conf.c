@@ -1104,7 +1104,7 @@ conf_validate_structure(struct conf *cf)
         case YAML_SEQUENCE_START_EVENT:
             if (seq) {
                 /*error = true;*/
-                log_info("conf: '%s' has more than one sequence directive",
+                log_warn("conf: '%s' has more than one sequence directive",
                           cf->fname);
             } else if (depth != CONF_MAX_DEPTH) {
                 error = true;

@@ -11,7 +11,9 @@
 
 To build twemproxy from source with _debug logs enabled_ and _assertions enabled_:
 
-    $ git clone git@github.com:twitter/twemproxy.git
+    $ apt-get install automake
+    $ apt-get install libtool
+    $ git clone https://github.com/helifu/twemproxy-163.git
     $ cd twemproxy
     $ autoreconf -fvi
     $ ./configure --enable-debug=full
